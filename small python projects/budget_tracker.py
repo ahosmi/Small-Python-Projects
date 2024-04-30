@@ -25,7 +25,7 @@ def load_budget_data(filepath):
             data = json.load(file)
             return data['initial_budget'], data['expenses']
     except (FileNotFoundError, json.JSONDecodeError):
-        return 0, []  # Return default values if the file doesn't exist or is empty/corrupted
+        return 0, []  
 #
 def save_budget_data(filepath, initial_budget, expenses):
     data = {
@@ -39,8 +39,6 @@ def save_budget_data(filepath, initial_budget, expenses):
 def main():
     print("Welcome to the Budget App")
     initial_budget = float(input("Please enter your initial budget: "))
-    # filepath = 'budget_data.json'  # Define the path to your JSON file
-    # initial_budget, expenses = load_budget_data(filepath)
     budget = initial_budget
     expenses = []
 
